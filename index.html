@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SeT LLM 2024: Secure and Trustworthy Large Language Models</title>
+  <title>SigSeq: Special Interest Group on Sequence Modeling</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/logo2.png" rel="icon">
+  <link href="assets/img/logo2.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
@@ -22,6 +22,9 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -44,15 +47,15 @@
       <div id="logo" class="me-auto">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
-        <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
+        <a href="index.html" class="scrollto"><img src="assets/img/sigseq.png" alt="" title="" ></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
-          <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
+          <li><a class="nav-link scrollto" href="#cfp">Sources</a></li>
+          <li><a class="nav-link scrollto" href="#gat">Give a Talk</a></li>
           <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
           <li><a class="nav-link scrollto" href="#organizers">Organizers</a></li>
 
@@ -85,8 +88,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      <h1 class="mb-4 pb-0">Secure and Trustworthy Large Language Models <br>(SeT LLM @ ICLR 2024)</h1>
-      <p class="mb-4 pb-0">May 11, Vienna, Austria</p>
+      <h1 class="mb-4 pb-0">SigSeq Seminar Series</h1>
+      <h2 class="mb-4 pb-0" style="color: #fff;"><b>Special Interest Group on Sequence Modeling</b></h2>
       <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
       <a href="#about" class="about-btn scrollto">About The Event</a> -->
     </div>
@@ -99,8 +102,10 @@
       <div class="container position-relative" data-aos="fade-up">
         <div class="row">
           <div class="col-lg-12">
-            <h2>About The Workshop</h2>
-            <p style="font-size: 16px;">The striding advances of large language models (LLMs) are revolutionizing many long-standing natural language processing tasks ranging from machine translation to question-answering and dialog systems. However, as LLMs are often built upon massive amounts of text data and subsequently applied in a variety of downstream tasks, building, deploying and operating LLMs entails profound security and trustworthiness challenges, which have attracted intensive research efforts in recent years.</p>
+            <h2>About The Seminar</h2>
+            <p style="font-size: 16px;">The advances of foundation models appear increasingly omnipotent 
+              with the scaling of data and model size. 
+              However, their capabilities are inherently limited by their architectures. This seminar examines fundamental sequence modeling approaches from an architecture design perspective, focusing on issues such as efficiency, generalization, memorization, and expressiveness while enabling practical implementation on modern hardwares.</p>
           </div>
           <!-- <div class="col-lg-3">
             <h3>Where</h3>
@@ -118,217 +123,182 @@
 
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Call For Papers</h2>
+          <h2>Sources</h2>
         </div>
-          <p>The primary aim of the proposed workshop is to identify such emerging challenges, 
-            discuss novel solutions to address them, and explore new perspectives and constructive views across the full theory/algorithm/application stack. 
-          </p>
-          <h3>Topics</h3>  
-          The potential topics include but are not limited to
-          <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Reliability assurance and assessment of LLMs</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Privacy leakage issues of LLMs</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Copyright protection</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Interpretability of LLMs</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Plagiarism detection and prevention</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Security of LLM deployment</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Backdoor attacks and defenses in LLMs</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Adversarial attacks and defenses in LLMs</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Toxic speech detection and mitigation</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Challenges in new learning paradigms of LLMs (e.g., prompt engineering)</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Fact verification (e.g. hallucinated generation)</li>
-
-
-            <!-- <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Community Access</li>
-            <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Workshop Access</li>
-            <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>After Party</li> -->
-          </ul>
-          <h3>Submission</h3>
-          <p>
-            All papers can be submitted through OpenReview through OpenReview: <a href="https://openreview.net/group?id=ICLR.cc/2024/Workshop/SeT_LLM" target="_blank">https://openreview.net/group?id=ICLR.cc/2024/Workshop/SeT_LLM</a>
-          </p>
-
-          <h3>Important Dates</h3>
-          <p>In response to the requests for an extension of the submission deadline and and in consideration of the Lunar Spring Festival, we have decided to extend the deadline for workshop submissions to <b>February 19th</b>.</p>
-          <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Submission Open: Jan 15</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Submission Deadline: <strike>Feb 12</strike> Feb 19</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Final Decision Notification: Mar 3</li>
-            <li><span class="fa-li"><i class="fa fa-check"></i></span>Camera Ready Deadline: <strike>Apr 3</strike> Apr 12</li></ul>
-          <p>All time are in <strong>UTC+0</strong>.</p>
-
-          <h3>Format</h3>
-
-          <p>
-            Please format your submissions with ICLR 2024 LaTeX style file. The review process for this workshop is double-blinded. Please anonymize your submissions and remove any links that may reveal your identity. 
-            
-            Submissions are limited to <strong>4 pages</strong> for main contents with unlimited reference and appendix pages. The accepted submissions are allowed with 1 additional page (5 pages in total for main contents) for the camera ready version.
-          </p>
-
-          <h3>Policies</h3>
-
-          <p>Submissions that are concurrently under review at other venues are acceptable.
-            All accepted papers are non-archival, and will be made publicly available at Openreview without an official proceeding and reviews. 
-            
-For any questions, please contact us at set-llm-admin@googlegroups.com.
-          </p>
-
-        <h3>Reviewer recruiment</h3>
-
-        <p>If you are interested in reviewing submissions, please fill out <a href="https://forms.gle/ynfDgDuFDHJb5aLP9" target="_blank">this form</a>.</p>
+        <style>
+          /* 设置一个容器来放置 2x2 的文本框 */
+          .new-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 左右各占 50% */
+            gap: 20px; /* 文本框之间的间距 */
+            width: 80vw; /* 让整个容器占 80% 的屏幕宽度 */
+            margin: 0 auto; /* 让整个容器水平居中 */
+            justify-content: center; /* 让网格在页面居中 */
+            align-items: center; /* 让每个格子内部居中 */
+            padding-bottom: 50px;
+        }
+    
+        @media screen and (max-width: 1200px) {
+            .new-container {
+                grid-template-columns: 1fr; /* 变成 1 列 */
+                width: 80vw; /* 让内容适应屏幕宽度 */
+            }
+        }
+  
+          .discord-box {
+              background-color: #EDE4F2; /* 浅紫色背景 */
+              border-radius: 12px; /* 圆角 */
+              display: flex; /* 让 "Discord" 和 "邮件文本" 在一行 */
+              align-items: center; /* 垂直居中 */
+              font-family: Arial, sans-serif;
+              color: black;
+              max-width: 100%; /* 适应父容器 */
+              overflow-x: auto; /* 超出部分可左右滚动 */
+              white-space: nowrap; /* 保证所有内容在一行 */
+              gap: 30px; /* 固定间距 */
+              min-height: 40px;
+              padding-left: 20px;
+          }
+  
+          .discord-title {
+              display: flex;
+              align-items: center; /* 确保图标和标题垂直居中 */
+              font-weight: bold;
+              color: #7B5CA5; /* Discord 主题紫色 */
+              font-size: 16px;
+              text-decoration: none; /* 移除超链接下划线 */
+              width: 100px;
+          }
+  
+          .discord-icon {
+            font-size: 24px; /* Ensures all icons are the same size */
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+          }
+  
+          .discord-text {
+              font-size: 14px;
+              white-space: nowrap; /* 确保文本不会换行 */
+              width: 150px; 
+              flex-shrink: 0;
+          }
+      </style>
+<div class="new-container">
+  <div class="discord-box">
+      <a href="https://discord.com/invite/vDaJTmKNcS" target="_blank" class="discord-title">
+          <i class="fa-brands fa-discord discord-icon"></i> Discord
+      </a>
+      <div class="discord-text">
+          <b>Don't wait, join our discussion on <a href="https://discord.com/invite/vDaJTmKNcS" target="_blank">Discord</a>!</b>
       </div>
+  </div>
 
+  <div class="discord-box">
+      <a href="#" target="_blank" class="discord-title">
+        <i class="fa-solid fa-video discord-icon"></i> Zoom
+      </a>
+      <div class="discord-text">
+        <b>Join <a href="#" target="_blank">Zoom</a> for a seminar!</b>
+      </div>
+  </div>
+
+  <div class="discord-box">
+      <a href="#schedule" target="_blank" class="discord-title">
+          <i class="fa-solid fa-calendar discord-icon"></i> Calendar
+      </a>
+      <div class="discord-text">
+        <b>See the <a href="#schedule" target="_blank">Calendar</a> of past and upcoming talks!</b>
+      </div>
+  </div>
+
+  <div class="discord-box">
+      <a href="#" target="_blank" class="discord-title">
+          <i class="fa-brands fa-youtube discord-icon"></i> Youtube
+      </a>
+      <div class="discord-text">
+        <b>Watch the recordings of past talks on <a href="#" target="_blank">Youtube</a>!</b>
+      </div>
+  </div>
+</div>
+      
     </section>
 
+    <section id="gat" class="section-with-bg">
+    
+    <style>
+      .steps-container {
+        display: flex; /* Makes the steps align horizontally */
+        justify-content: center; /* Centers them */
+        align-items: flex-start; /* Aligns items at the top */
+        gap: 50px; /* Space between each column */
+        padding: 20px 20px 50px 20px;
+        max-width: 80%;
+        margin: auto;
+    }
 
+    .step {
+        flex: 1; /* Ensures equal width */
+        max-width: 300px;
+        text-align: center;
+    }
 
+    .step-icon {
+        font-size: 50px;
+        color: #7b3fa5c3;
+        margin-bottom: 15px;
+    }
 
-    <!-- ======= Speakers Section ======= -->
-    <section id="speakers">
+    @media (max-width: 1000px) {
+    .steps-container {
+        flex-direction: column; /* Stacks them vertically on small screens */
+        align-items: center;
+    }
+
+    .step {
+        max-width: 90%;
+    }
+}
+        </style>
+
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Invited Speakers</h2>
+          <h2>Want to present?</h2>
         </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/2.png" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://thashim.github.io/" target = "_blank">Tatsunori Hashimoto</a></h3>
-                <p>Stanford</p>
-                <div class="social">
-<a href="https://thashim.github.io/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-<a href="https://scholar.google.com/citations?user=5ygiTwsAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-<a href="https://twitter.com/tatsu_hashimoto" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-<a href="https://www.linkedin.cn/incareer/in/tatsunori-hashimoto-383231a" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/5.jpeg" alt="Speaker 5" class="img-fluid">
-              <div class="details">
-                <h3><a href="http://www.phontron.com/" target = "_blank">Graham Neubig</a></h3>
-                <p>CMU</p>
-                <div class="social">
-<a href="https://www.phontron.com/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-<a href="https://scholar.google.com/citations?user=wlosgkoAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-<a href="https://twitter.com/gneubig" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-<a href="https://www.linkedin.com/in/graham-neubig-10b41616b" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/1.png" alt="Speaker 1" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://aisecure.github.io/" target = "_blank">Bo Li</a></h3>
-                <p>University of Chicago</p>
-                <div class="social">
-<a href="https://aisecure.github.io/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-<a href="https://scholar.google.com/citations?user=K8vJkTcAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-<a href="https://twitter.com/uiuc_aisecure" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-<a href="https://www.linkedin.com/in/lxbosky" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
         
-          
-          <!-- <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/3.jpeg" alt="Speaker 3" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://web.cs.ucla.edu/~chohsieh/" target = "_blank">Cho-Jui Hsieh</a></h3>
-                <p>UCLA</p>
-                <div class="social">
-<a href="https://web.cs.ucla.edu/~chohsieh/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-<a href="https://scholar.google.com/citations?user=Wy89g4IAAAAJ&hl=en&oi=ao" target = "_blank"> <i class="bi bi-google">  </i> </a>
-<a href="https://www.linkedin.com/in/cho-jui-hsieh-54179b3b" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/4.png" alt="Speaker 4" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://robinjia.github.io/" target = "_blank">Robin Jia</a></h3>
-                <p>USC</p>
-                <div class="social">
-<a href="https://robinjia.github.io/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-<a href="https://scholar.google.com/citations?user=ajZ-_O0AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-<a href="https://twitter.com/robinomial" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-<a href="https://www.linkedin.com/in/robin-jia-a50b9623a" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                </div>
-              </div>
-            </div>
+        <div class="steps-container">
+          <!-- Step 1 -->
+          <div class="step">
+              <i class="fas fa-envelope step-icon"></i>
+              <h3>1. Get in touch</h3>
+              <p>Contact us via <a href="mailto:yangsl66@mit.edu">email</a> or any other method with the topic you'd like to present and your preferred time slot.</p>
           </div>
-          
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/6.jpeg" alt="Speaker 7" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://www.cs.umd.edu/~tomg/">Tom Goldstein</a></h3>
-                <p>University of Maryland</p>
-                <div class="social">
-                  <a href="https://www.cs.umd.edu/~tomg/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=KmSuVtgAAAAJ&hl=en" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                </div>
-              </div>
-            </div>
+      
+          <!-- Step 2 -->
+          <div class="step">
+              <i class="fas fa-mouse-pointer step-icon"></i>
+              <h3>2. We add you</h3>
+              <p>We will add you to an available time slot.</p>
           </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/organizers/7.jpg" alt="Speaker 6" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://xiaocw11.github.io">Chaowei Xiao</a></h3>
-                <p>University of Wisconsin, Madison</p>
-                <div class="social">
-                  <a href="https://xiaocw11.github.io" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=Juoqtj8AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/ChaoweiX" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                  <a href="https://www.linkedin.com/in/chaowei-xiao-00a73213a" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                  
-                </div>
-              </div>
-            </div>
+      
+          <!-- Step 3 -->
+          <div class="step">
+              <i class="fas fa-desktop step-icon"></i>
+              <h3>3. Present</h3>
+              <p>Present your paper or a topic of interest.</p>
           </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/speakers/7.jpeg" alt="Speaker 7" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://www.ericswallace.com/">Eric Wallace</a></h3>
-                <p>OpenAI</p>
-                <div class="social">
-                  <a href="https://www.ericswallace.com/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=SgST3LkAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/Eric_Wallace_" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-
       </div>
 
-    </section>
-    <!-- End Speakers Section -->
-
+      </section>
     <!-- ======= Schedule Section ======= -->
     <section id="schedule" class="section-with-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Event Schedule</h2>
-
+        </div>
         <!-- </div> -->
 <!-- 
         <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
@@ -345,194 +315,79 @@ For any questions, please contact us at set-llm-admin@googlegroups.com.
 
         <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
           necessitatibus voluptatem quis labore perspiciatis quia.</h3> -->
+        <style>
+          .schedule-header {
+            display: flex;
+            font-weight: bold;
+            background-color: #f6f7fd;
+            padding: 10px 0;
+            border-bottom: 2px solid #f82249;
+            text-align: center;
+          }
 
+          .schedule-header div {
+            text-transform: uppercase;
+            font-size: 16px;
+            color: #0e1b4d;
+          }
+          .custom-schedule {
+            display: grid;
+            grid-template-columns: 2fr 2fr 6fr 2fr; /* 时间、演讲者、主题 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            text-align: center; /* 确保文字居中 */
+            gap: 10px; /* 控制间距 */
+          }
+          .custom-schedule .time,
+          .custom-schedule .presenter,
+          .custom-schedule .topic,
+          .custom-schedule .source {
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            text-align: center;
+          }
+
+          .custom-schedule .presenter {
+            gap: 10px; /* 头像与名字之间的间距 */
+          }
+
+          .custom-schedule .presenter .speaker img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+
+        </style>
         <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
 
           <!-- Schdule Day 1 -->
           <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>9:00 - 9:10</time></div>
-              <div class="col-md-10">
-                <h4>Opening Remarks
-                </h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>9:10 - 9:40</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/2.png" alt="Tatsu Hashimoto">
-                </div>
-                <h4>Invited Talk 1</h4>
-                <h4>Tatsu Hashimoto</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>9:40 - 9:50</time></div>
-              <div class="col-md-10">
-                <h4>Oral Paper Presentation 1</h4>
-                <b>On Prompt-Driven Safeguarding for Large Language Models</b>
-                <br>
-                Chujie Zheng, Fan Yin, Hao Zhou, Fandong Meng, Jie Zhou, Kai-Wei Chang, Minlie Huang, Nanyun Peng
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>9:50 - 10:00</time></div>
-              <div class="col-md-10">
-                <h4>Oral Paper Presentation 2</h4>
-                <b>Explorations of Self-Repair in Language Model</b>
-                <br>
-                Cody Rushing, Neel Nanda
-              </div>
+            <div class="row schedule-header">
+              <div class="col-md-2">Time</div>
+              <div class="col-md-2">Presenter</div>
+              <div class="col-md-6">Topic</div>
+              <div class="col-md-2">Source</div>
             </div>
             
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:00 - 10:30</time></div>
-              <div class="col-md-10">
+            <div class="row schedule-item d-flex align-items-center text-center">
+              <div class="col-md-2 time d-flex justify-content-center align-items-center">
+                <time>TBD</time>
+              </div>
+              <div class="col-md-2 presenter d-flex justify-content-center align-items-center">
                 <div class="speaker">
-                  <img src="assets/img/speakers/5.jpeg" alt="Graham Neubig">
+                  <img src="assets/img/speakers/1.jpeg" alt="Alex Wang">
                 </div>
-                <h4>Invited Talk 2</h4>
-                <h4>Graham Neubig</h4>
+                <span>Alex Wang</span>
+              </div>
+              <div class="col-md-6 topic d-flex justify-content-center align-items-center">
+                <span>Test-time regression: a unifying framework for designing sequence models with associative memory</span>
+              </div>
+              <div class="col-md-2 source d-flex justify-content-center align-items-center">
+                <a href="#" target="_blank">Paper</a>
               </div>
             </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:30 - 10:40</time></div>
-              <div class="col-md-10">
-                <h4>Oral Paper Presentation 3</h4>
-                <b>TOFU: A Task of Fictitious Unlearning for LLMs</b>
-                <br>
-                Pratyush Maini, Zhili Feng, Avi Schwarzschild, Zachary Chase Lipton, J Zico Kolter
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:40 - 10:50</time></div>
-              <div class="col-md-10">
-                <h4>Oral Paper Presentation 4</h4>
-                <b>Are Large Language Models Bayesian? A Martingale Perspective on In-Context Learning</b>
-                <br>
-                Fabian Falck, Ziyu Wang, Christopher C. Holmes
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:50 - 12:00</time></div>
-              <div class="col-md-10">
-                <h4>Poster Session A</h4>
-                <b>For all accepted papers</b>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>12:00 - 13:00</time></div>
-              <div class="col-md-10">
-                <h4>Lunch Break</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>13:00 - 13:30</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/1.png" alt="Bo Li">
-                </div>
-                <h4>Invited Talk 3</h4>
-                <h4>Bo Li</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>13:30 - 14:00</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/4.png" alt="Robin Jia">
-                </div>
-                <h4>Invited Talk 4</h4>
-                <h4>Robin Jia</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>14:00 - 14:30</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/6.jpeg" alt="Tom Goldstein">
-                </div>
-                <h4>Invited Talk 5</h4>
-                <h4>Tom Goldstein</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>14:30 - 15:00</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/organizers/7.jpg" alt="Chaowei Xiao">
-                </div>
-                <h4>Invited Talk 6</h4>
-                <h4>Chaowei Xiao</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>15:00 - 15:30</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="assets/img/speakers/7.jpeg" alt="Eric Wallace">
-                </div>
-                <h4>Invited Talk 7</h4>
-                <h4>Eric Wallace</h4>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>15:30 - 15:45</time></div>
-              <div class="col-md-10">
-                <h4>Oral Paper Presentation 5</h4>
-                <b>How Susceptible are Large Language Models to Ideological Manipulation?</b>
-                <br>
-                Kai Chen, Zihao He, Jun Yan, Taiwei Shi, Kristina Lerman
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>15:45 - 16:00</time></div>
-              <div class="col-md-10">
-                <h4>Oral Paper Presentation 6</h4>
-                <b>Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank Modifications</b>
-                <br>
-                Boyi Wei, Kaixuan Huang, Yangsibo Huang, Tinghao Xie, Xiangyu Qi, Mengzhou Xia, Prateek Mittal, Mengdi Wang, Peter Henderson
-              </div>
-            </div>
-
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>16:00 - 16:50</time></div>
-              <div class="col-md-10">
-                <h4>Poster Session B</h4>
-                <b>For all accepted papers</b>
-              </div>
-            </div>
-            
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>16:50 - 17:00</time></div>
-              <div class="col-md-10">
-                <h4>Closing Remarks
-                </h4>
-              </div>
-            </div>
-          <!-- End Schdule Day 1 -->
-
-
-        </div>
-
-      </div>
+          </div>
 
     </section><!-- End Schedule Section -->
 
@@ -619,135 +474,61 @@ For any questions, please contact us at set-llm-admin@googlegroups.com.
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Organizers</h2>
-          <p>This workshop is organized by</p>
+          <p>This seminar is organized by</p>
         </div>
         
         <div class="row">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/organizers/6.jpg" alt="Speaker 3" class="img-fluid">
+              <img src="assets/img/organizers/SY.png" alt="Speaker 3" class="img-fluid">
               <div class="details">
-                <h3><a href="https://yisenwang.github.io">Yisen Wang</a></h3>
-                <p>Peking University</p>
+                <h3><a href="https://sustcsonglin.github.io/">Songlin Yang</a></h3>
+                <p>Massachusetts Institute of Technology</p>
                 <div class="social">
-                  <a href="https://yisenwang.github.io" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=uMWPDboAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
+                  <a href="https://sustcsonglin.github.io/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
+                  <a href="https://scholar.google.com/citations?user=1chlis0AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
+                  <a href="https://x.com/SonglinYang4" target = "_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+                  <a href="mailto:yangsl66@mit.edu" target = "_blank"><i class="fa-solid fa-envelope"></i> </a>
 
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/organizers/5.jpg" alt="Speaker 2" class="img-fluid">
+              <img src="assets/img/organizers/XY.jpg" alt="Speaker 2" class="img-fluid">
               <div class="details">
-                <h3><a href="https://alps-lab.github.io">Ting Wang</a></h3>
-                <p>Stony Brook University</p>
+                <h3><a href="https://xinyuyang.me/">Malachy Yang</a></h3>
+                <p>Carnegie Mellon University</p>
                 <div class="social">
-<a href="https://alps-lab.github.io" target = "_blank"> <i class="bi bi-globe">  </i> </a>
-<a href="https://scholar.google.com/citations?user=cwcBTegAAAAJ" target = "_blank"> <i class="bi bi-google">   </i> </a>
-<a href="https://twitter.com/fascina_ting" target = "_blank"><i class="bi bi-twitter"> </i></a>
-<a href="https://www.linkedin.cn/incareer/in/ting-wang-20282a1b6" target = "_blank"><i class="bi bi-linkedin"></i> </a>
+                <a href="https://xinyuyang.me/" target = "_blank"> <i class="bi bi-globe">  </i> </a>
+                <a href="https://scholar.google.com/citations?user=Fvq2R14AAAAJ" target = "_blank"> <i class="bi bi-google">   </i> </a>
+                <a href="https://x.com/Xinyu2ML" target = "_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+                <a href="mailto:xinyuagi@cmu.edu" target = "_blank"><i class="fa-solid fa-envelope"></i> </a>
 
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/organizers/2.jpg" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://jinghuichen.github.io">Jinghui Chen</a></h3>
-                <p>Penn State University</p>
-                <div class="social">
-                  <a href="https://jinghuichen.github.io" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=mKia7Y4AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/JinghuiChen001" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                  <a href="https://www.linkedin.com/in/jinghui-chen-53a2a692" target = "_blank"> <i class="bi bi-linkedin"></i> </a>                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/organizers/7.jpg" alt="Speaker 1" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://xiaocw11.github.io">Chaowei Xiao</a></h3>
-                <p>University of Wisconsin, Madison</p>
-                <div class="social">
-                  <a href="https://xiaocw11.github.io" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=Juoqtj8AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/ChaoweiX" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                  <a href="https://www.linkedin.com/in/chaowei-xiao-00a73213a" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/organizers/8.jpg" alt="Speaker 4" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://jyzhao.net">Jieyu Zhao</a></h3>
-                <p>USC</p>
-                <div class="social">
-                  <a href="https://jyzhao.net" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=9VaGBCQAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/jieyuzhao11" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                  <a href="https://www.linkedin.com/in/jieyuzhao" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/organizers/3.jpg" alt="Speaker 3" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://vnpeng.net">Nanyun Peng</a></h3>
-                <p>UCLA</p>
-                <div class="social">
-                  <a href="https://vnpeng.net" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=XxRXvX0AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/violetnpeng" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                  <a href="https://www.linkedin.com/in/nanyun-peng-30029664" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/organizers/4.jpg" alt="Speaker 4" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://homes.cs.washington.edu/~yuliats">Yulia Tsvetkov</a></h3>
-                <p>UW</p>
-                <div class="social">
-                  <a href="https://homes.cs.washington.edu/~yuliats" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=SEDPkrsAAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://www.linkedin.com/in/yulia-tsvetkov-a018801" target = "_blank"> <i class="bi bi-linkedin"></i> </a>                  
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-3">
+          <div class="col-lg-4 col-md-6">
             <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/organizers/1.jpg" alt="Speaker 1" class="img-fluid">
+              <img src="assets/img/organizers/SA.jpg" alt="Speaker 1" class="img-fluid">
               <div class="details">
-                <h3><a href="https://www.eas.caltech.edu/people/anima">Anima Anandkumar</a></h3>
-                <p>Caltech</p>
+                <h3><a href="https://arorasimran.com/">Simran Arora</a></h3>
+                <p>Stanford University</p>
                 <div class="social">
-                  <a href="https://www.eas.caltech.edu/people/anima" target = "_blank"> <i class="bi bi-globe">   </i> </a>
-                  <a href="https://scholar.google.com/citations?user=bEcLezcAAAAJ&hl=en" target = "_blank"> <i class="bi bi-google">  </i> </a>
-                  <a href="https://twitter.com/AnimaAnandkumar" target = "_blank"> <i class="bi bi-twitter"> </i> </a>
-                  <a href="https://www.linkedin.com/in/anima-anandkumar" target = "_blank"> <i class="bi bi-linkedin"></i> </a>
+                  <a href="https://arorasimran.com/" target = "_blank"> <i class="bi bi-globe">   </i> </a>
+                  <a href="https://scholar.google.com/citations?user=rGRsWH8AAAAJ" target = "_blank"> <i class="bi bi-google">  </i> </a>
+                  <a href="https://x.com/simran_s_arora" target = "_blank"><i class="fa-brands fa-x-twitter"> </i></a>
+                  <a href="mailto:simran@cs.stanford.edu" target = "_blank"><i class="fa-solid fa-envelope"></i> </a>
                   
                 </div>
               </div>
             </div>
           </div>
+ 
         </div>
       </div>
 
@@ -890,7 +671,7 @@ For any questions, please contact us at set-llm-admin@googlegroups.com.
         Licensing information: https://bootstrapmade.com/license/
         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
       -->
-        Template designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Template adopted from <a href="https://set-llm.github.io/">SeT LLM @ ICLR 2024</a> and  <a href="https://flann.super.site/">FLaNN Seminars</a>
       </div>
     </div>
   </footer><!-- End  Footer -->

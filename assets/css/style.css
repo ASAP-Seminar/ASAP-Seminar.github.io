@@ -41,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -152,7 +152,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner {
-  background: rgba(6, 12, 34, 0.98);
+  background: rgba(200, 194, 208, 0.98);
   height: 70px;
 }
 
@@ -250,7 +250,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(202, 206, 221, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -493,7 +493,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(6, 12, 34, 0.8);
+  background: rgba(174, 165, 184, 0.653);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -653,7 +653,7 @@ h6 {
 # About Section
 --------------------------------------------------------------*/
 #about {
-  background: url("../img/about-bg.jpg");
+  background: url("../img/about-bg.jpeg");
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -669,7 +669,7 @@ h6 {
 
 #about:before {
   content: "";
-  background: rgba(13, 20, 41, 0.8);
+  background: rgba(166, 92, 182, 0.8);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -716,7 +716,7 @@ h6 {
 }
 
 #organizers .speaker .details {
-  background: rgba(6, 12, 34, 0.76);
+  background: rgba(194, 182, 210, 0.98);
   position: absolute;
   left: 0;
   bottom: -40px;
@@ -1597,7 +1597,7 @@ h6 {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #101522;
+  background: rgba(200, 194, 208, 0.98);
   padding: 0 0 25px 0;
   color: #eee;
   font-size: 14px;
@@ -1744,5 +1744,6 @@ h6 {
 #footer .credits {
   text-align: center;
   font-size: 13px;
-  color: #ddd;
+  color: #000000;
 }
+
