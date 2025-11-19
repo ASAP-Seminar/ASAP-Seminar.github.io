@@ -352,6 +352,31 @@
             border-radius: 50%;
           }
           
+          /* 当页面宽度太窄时隐藏头像，特别是对于两个presenter的情况 */
+          @media (max-width: 1200px) {
+            /* 隐藏所有schedule-item中的头像图片 */
+            .schedule-item .speaker img,
+            .schedule-item img[class*="speaker"],
+            .schedule-item img[data-src*="speakers"] {
+              display: none !important;
+              visibility: hidden !important;
+            }
+            /* 对于两个presenter的情况，隐藏整个speaker容器以节省空间 */
+            .schedule-item .speaker {
+              display: none !important;
+            }
+          }
+          
+          /* 对于更窄的宽度，也隐藏单个presenter的头像 */
+          @media (max-width: 992px) {
+            .schedule-item .speaker,
+            .schedule-item .speaker img,
+            .schedule-item img[class*="speaker"],
+            .schedule-item img[data-src*="speakers"] {
+              display: none !important;
+              visibility: hidden !important;
+            }
+          }
 
         </style>
 <div class="tab-content row justify-content-center" style="overflow-x: auto; min-width: 100%;">
@@ -383,7 +408,7 @@
           <!-- Speaker 2 -->
           <div style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
-              <img data-src="assets/img/speakers/52.webp" alt="Yuxi Liu" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
+              <img data-src="assets/img/speakers/52.webp" alt="Konpat Preechakul" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
             <span style="display: flex; align-items: center; text-align: center; justify-content: center; height: 100%;">
               <a href="https://konpat.notion.site/" target="_blank">Konpat Preechakul</a>
