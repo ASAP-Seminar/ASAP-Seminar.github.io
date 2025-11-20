@@ -317,6 +317,7 @@
             padding: 10px 0;
             border-bottom: 2px solid #f82249;
             text-align: center;
+            margin: 0;
           }
 
           .schedule-header div {
@@ -358,60 +359,186 @@
             display: flex !important;
             justify-content: flex-start !important;
             align-items: center !important;
-            gap: 8px !important;
-            padding: 0 6px;
+            padding: 0 10px 0 20px;
             min-height: 50px;
-            height: 100%;
           }
 
-          .schedule-item > div:nth-child(2) > div {
-            width: 100%;
+          .schedule-item > div:nth-child(3) {
+            width: 50% !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center !important;
+            padding: 0 24px 0 12px;
+            text-align: center;
           }
 
           .schedule-item .presenter-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            justify-content: flex-start !important;
+            display: grid !important;
+            grid-template-columns: 50px 1fr !important;
+            column-gap: 12px !important;
+            align-items: center !important;
+            width: 100% !important;
           }
 
           .schedule-item .speaker {
-            flex: 0 0 50px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 50px !important;
+            height: 50px !important;
+            max-width: 50px !important;
+            max-height: 50px !important;
+            min-width: 50px !important;
+            min-height: 50px !important;
+            display: block !important;
+            background: transparent !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            flex-shrink: 0 !important;
           }
 
           .schedule-item .speaker img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            display: block;
+            clip-path: circle(50% at 50% 50%);
+          }
+
+          .schedule-item .multi-presenters .speaker {
+            flex: 0 0 50px !important;
+            width: 50px !important;
+            height: 50px !important;
+            max-width: 50px !important;
+            max-height: 50px !important;
+            min-width: 50px !important;
+            min-height: 50px !important;
+          }
+
+          .schedule-item .multi-presenters .speaker img {
+            width: 50px !important;
+            height: 50px !important;
           }
 
           .schedule-item .speaker + span {
-            flex: 1;
             display: flex !important;
-            align-items: center;
-            justify-content: flex-start !important;
+            align-items: center !important;
             text-align: left !important;
-            min-width: 0;
+            grid-column: 2 !important;
           }
 
           .schedule-item .speaker + span a {
-            width: 100%;
             display: inline-block;
           }
 
+          /* Override inline styles for the outer presenter-row that contains multi-presenters */
+          .schedule-item > div.presenter-row:has(.multi-presenters) {
+            justify-content: flex-start !important;
+            padding-left: 20px !important;
+          }
+          
+          /* Override inline styles for multi-presenters container */
+          .schedule-item > div > .multi-presenters,
+          .schedule-item .presenter-row > .multi-presenters,
           .schedule-item .multi-presenters {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            gap: 8px;
-            align-items: flex-start;
+            display: grid !important;
+            grid-template-columns: 50px 1fr !important;
+            gap: 8px 12px !important;
+            width: 100% !important;
+            align-items: center !important;
+            flex-direction: unset !important;
+          }
+          
+          /* Override inline styles for presenter-row inside multi-presenters */
+          .schedule-item .multi-presenters > .presenter-row {
+            display: contents !important;
+            flex-direction: unset !important;
+            gap: unset !important;
+          }
+          
+          .schedule-item .multi-presenters .speaker {
+            grid-column: 1 !important;
+            justify-self: start !important;
+          }
+          
+          .schedule-item .multi-presenters .speaker + span {
+            grid-column: 2 !important;
+            justify-self: start !important;
+            text-align: left !important;
+            justify-content: flex-start !important;
+          }
+
+          .schedule-item.collapsed {
+            display: none !important;
+          }
+
+          .schedule-item {
+            align-items: center !important;
+          }
+
+          .schedule-item > div {
+            align-items: center !important;
+          }
+          
+          /* Keep Presenter column centered */
+          .schedule-item > div:nth-child(2) {
+            align-items: center !important;
+          }
+          
+          .schedule-item > div:nth-child(2),
+          #day-1 .schedule-item > div:nth-child(2) {
+            align-items: center !important;
+          }
+
+          @media (max-width: 992px) {
+            .schedule-header {
+              padding: 10px 0;
+            }
+            
+            /* Remove min-width to fit screen, but adjust padding/font to fit content */
+            .schedule-header,
+            .schedule-item {
+              min-width: auto;
+            }
+
+            /* Adjust padding and widths for smaller screens */
+            .schedule-item > div:nth-child(2) {
+              padding: 0 !important; /* 完全去掉 padding，左对齐 */
+              gap: 0 !important;
+              align-items: flex-start !important;
+            }
+            
+            .schedule-item > div:nth-child(3) {
+              padding: 0 8px !important; /* Topic 列保持一点 padding */
+            }
+
+            /* Slightly smaller font for mobile */
+            .schedule-item, .schedule-header {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            #day-1 .schedule-item {
+              align-items: flex-start !important;
+            }
+
+            #day-1 .schedule-item > div {
+              align-items: flex-start !important;
+            }
+            
+            /* 确保 presenter 列完全左对齐，无额外 padding */
+            #day-1 .schedule-item > div:nth-child(2) {
+              padding: 0 !important;
+            }
+
+            #day-1 .schedule-item > div:nth-child(3) {
+              text-align: left !important;
+              justify-content: flex-start !important;
+            }
+
+            #day-1 .schedule-item .presenter-row {
+              gap: 0 !important;
+              padding: 0 !important;
+            }
           }
           
           /* 当页面宽度太窄时隐藏头像，特别是对于两个presenter的情况 */
@@ -426,6 +553,69 @@
             /* 对于两个presenter的情况，隐藏整个speaker容器以节省空间 */
             .schedule-item .speaker {
               display: none !important;
+            }
+            
+            /* 统一 presenter 列的左右边距与对齐 */
+            .schedule-item > div:nth-child(2),
+            .schedule-item > .presenter-row:nth-child(2),
+            .schedule-item > div.presenter-row {
+              padding: 0 !important;
+              margin: 0 !important;
+              justify-content: flex-start !important;
+              align-items: flex-start !important;
+            }
+
+            /* 覆盖全局的 padding-left: 20px，确保外层容器左对齐 */
+            .schedule-item > div.presenter-row:has(.multi-presenters),
+            .schedule-item > div.presenter-row,
+            .schedule-item > div:nth-child(2).presenter-row {
+              padding: 0 !important;
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+              margin: 0 !important;
+              justify-content: flex-start !important;
+              align-items: flex-start !important;
+            }
+
+            /* 所有 presenter-row：先统一改成单列 Grid */
+            .schedule-item .presenter-row {
+              grid-template-columns: 1fr !important;
+              column-gap: 0 !important;
+              justify-items: flex-start !important;
+            }
+            
+            /* 单讲者的 span 直接左对齐 */
+            .schedule-item .presenter-row:not(:has(.multi-presenters)) span {
+              grid-column: 1 !important;
+              text-align: left !important;
+              padding: 0 !important;
+              margin: 0 !important;
+            }
+
+            /* 多讲者：改成单列 Grid */
+            .schedule-item > div > .multi-presenters,
+            .schedule-item .presenter-row > .multi-presenters,
+            .schedule-item .multi-presenters {
+              grid-template-columns: 1fr !important;
+              column-gap: 0 !important;
+              row-gap: 8px !important;
+              justify-items: flex-start !important;
+              padding: 0 !important;
+              margin: 0 !important;
+            }
+            
+            /* 多讲者内部的 presenter-row 使用 display: contents 让子元素直接参与父 Grid */
+            .schedule-item .multi-presenters > .presenter-row {
+              display: contents !important;
+            }
+            
+            /* 多讲者内部的 span 也左对齐 */
+            .schedule-item .multi-presenters span {
+              grid-column: 1 !important;
+              text-align: left !important;
+              justify-self: flex-start !important;
+              padding: 0 !important;
+              margin: 0 !important;
             }
           }
           
@@ -453,6 +643,37 @@
             .schedule-tab-content {
               padding: 0 12px;
             }
+          }
+
+          @media (max-width: 992px) {
+            .schedule-tab-content {
+              justify-content: flex-start !important;
+            }
+          }
+
+          .schedule-expand-toggle {
+            width: 100%;
+            max-width: 280px;
+            margin: 24px auto 0 auto;
+            display: flex;
+            justify-content: center;
+          }
+
+          .schedule-expand-toggle button {
+            width: 100%;
+            border: 1px solid #f82249;
+            background: transparent;
+            color: #f82249;
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background 0.2s ease, color 0.2s ease;
+          }
+
+          .schedule-expand-toggle button:hover {
+            background: #f82249;
+            color: #fff;
           }
         </style>
 <div class="tab-content row justify-content-center schedule-tab-content" style="overflow-x: auto; min-width: 100%;">
@@ -1719,6 +1940,41 @@
     </div>
   </div>
 </div>
+<div class="schedule-expand-toggle">
+  <button id="schedule-toggle" type="button" aria-expanded="false">Show older sessions</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const MAX_VISIBLE = 5;
+    const scheduleItems = Array.from(document.querySelectorAll('#day-1 .schedule-item'));
+    const toggleBtn = document.getElementById('schedule-toggle');
+
+    if (!toggleBtn || scheduleItems.length <= MAX_VISIBLE) {
+      if (toggleBtn) {
+        toggleBtn.style.display = 'none';
+      }
+      return;
+    }
+
+    const updateVisibility = (expanded) => {
+      scheduleItems.forEach((item, index) => {
+        if (index >= MAX_VISIBLE) {
+          item.classList.toggle('collapsed', !expanded);
+        }
+      });
+      toggleBtn.textContent = expanded ? 'Show fewer sessions' : 'Show older sessions';
+      toggleBtn.setAttribute('aria-expanded', String(expanded));
+    };
+
+    updateVisibility(false);
+
+    toggleBtn.addEventListener('click', () => {
+      const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      updateVisibility(!expanded);
+    });
+  });
+</script>
     </section><!-- End Schedule Section -->
 
     <!-- ======= Venue Section ======= -->
