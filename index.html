@@ -525,14 +525,82 @@
               align-items: flex-start !important;
             }
             
+            /* 调整列宽比例，防止 TIME 和 Presenter 重叠 */
+            #day-1 .schedule-item > div:nth-child(1) {
+              width: 20% !important;
+              min-width: 80px !important;
+              padding: 0 4px !important;
+              font-size: 14px !important;
+              align-items: center !important;
+              align-self: center !important;
+              justify-content: center !important;
+              display: flex !important;
+              text-align: center !important;
+              word-wrap: break-word !important;
+              overflow-wrap: break-word !important;
+            }
+            
             /* Presenter 列：水平和垂直都居中 */
             #day-1 .schedule-item > div:nth-child(2) {
-              padding: 0 !important;
+              width: 25% !important;
+              min-width: 100px !important;
+              padding: 0 4px !important;
               align-items: center !important;
               align-self: center !important;
               justify-content: center !important;
               display: flex !important;
               height: 100% !important;
+              word-wrap: break-word !important;
+              overflow-wrap: break-word !important;
+            }
+            
+            /* Presenter 列内部内容防止溢出 */
+            #day-1 .schedule-item > div:nth-child(2) span,
+            #day-1 .schedule-item > div:nth-child(2) a {
+              word-wrap: break-word !important;
+              overflow-wrap: break-word !important;
+              max-width: 100% !important;
+            }
+            
+            /* Topic 列调整 */
+            #day-1 .schedule-item > div:nth-child(3) {
+              width: 40% !important;
+              padding: 0 4px !important;
+            }
+            
+            /* Source 列调整 */
+            #day-1 .schedule-item > div:nth-child(4) {
+              width: 15% !important;
+              min-width: 60px !important;
+              padding: 0 4px !important;
+            }
+            
+            /* 表头列宽也要调整 */
+            #day-1 .schedule-header > div:nth-child(1) {
+              width: 20% !important;
+              min-width: 80px !important;
+              padding: 0 4px !important;
+              text-align: center !important;
+            }
+            
+            #day-1 .schedule-header > div:nth-child(2) {
+              width: 25% !important;
+              min-width: 100px !important;
+              padding: 0 4px !important;
+              text-align: center !important;
+            }
+            
+            #day-1 .schedule-header > div:nth-child(3) {
+              width: 40% !important;
+              padding: 0 4px !important;
+              text-align: center !important;
+            }
+            
+            #day-1 .schedule-header > div:nth-child(4) {
+              width: 15% !important;
+              min-width: 60px !important;
+              padding: 0 4px !important;
+              text-align: center !important;
             }
             
             /* Presenter 列内部内容也居中 */
@@ -666,6 +734,10 @@
               text-align: center !important;
               padding: 0 !important;
               margin: 0 !important;
+              width: 100% !important;
+              display: flex !important;
+              justify-content: center !important;
+              align-items: center !important;
             }
 
             /* 多讲者：改成单列 Grid，内容居中 */
@@ -679,7 +751,15 @@
               justify-items: center !important;
               align-items: center !important;
               padding: 0 !important;
-              margin: 0 !important;
+              margin: 0 auto !important;
+              width: 100% !important;
+            }
+            
+            /* 确保包含 multi-presenters 的外层容器也居中 */
+            .schedule-item > div.presenter-row:has(.multi-presenters),
+            .schedule-item > div:nth-child(2):has(.multi-presenters) {
+              justify-content: center !important;
+              align-items: center !important;
             }
             
             /* 多讲者内部的 presenter-row 使用 display: contents 让子元素直接参与父 Grid */
@@ -697,7 +777,14 @@
               margin: 0 auto !important;
               display: flex !important;
               align-items: center !important;
-              width: auto !important;
+              width: 100% !important;
+            }
+            
+            .schedule-item .presenter-row:not(:has(.multi-presenters)) span a,
+            .schedule-item .multi-presenters span a {
+              width: 100% !important;
+              text-align: center !important;
+              display: inline-block !important;
             }
             
             /* span 内部的链接也居中 */
