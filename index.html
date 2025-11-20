@@ -524,6 +524,17 @@
             #day-1 .schedule-item > div {
               align-items: flex-start !important;
             }
+
+            /* Table keeps a minimum width; parent scrolls horizontally */
+            .schedule-tab-content {
+              overflow-x: auto;
+            }
+
+            #day-1,
+            #day-1 .schedule-header,
+            #day-1 .schedule-item {
+              min-width: 720px !important;
+            }
             
             /* 调整列宽比例，防止 TIME 和 Presenter 重叠 */
             #day-1 .schedule-item > div:nth-child(1) {
