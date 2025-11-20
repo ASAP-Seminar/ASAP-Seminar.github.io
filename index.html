@@ -351,6 +351,68 @@
             height: 50px;
             border-radius: 50%;
           }
+
+          /* Ensure speaker photos and names align horizontally */
+          .schedule-item > div:nth-child(2) {
+            width: 16.66% !important;
+            display: flex !important;
+            justify-content: flex-start !important;
+            align-items: center !important;
+            gap: 8px !important;
+            padding: 0 6px;
+            min-height: 50px;
+            height: 100%;
+          }
+
+          .schedule-item > div:nth-child(2) > div {
+            width: 100%;
+          }
+
+          .schedule-item .presenter-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            justify-content: flex-start !important;
+          }
+
+          .schedule-item .speaker {
+            flex: 0 0 50px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .schedule-item .speaker img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .schedule-item .speaker + span {
+            flex: 1;
+            display: flex !important;
+            align-items: center;
+            justify-content: flex-start !important;
+            text-align: left !important;
+            min-width: 0;
+          }
+
+          .schedule-item .speaker + span a {
+            width: 100%;
+            display: inline-block;
+          }
+
+          .schedule-item .multi-presenters {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+            align-items: flex-start;
+          }
           
           /* 当页面宽度太窄时隐藏头像，特别是对于两个presenter的情况 */
           @media (max-width: 1200px) {
@@ -379,8 +441,22 @@
           }
 
         </style>
-<div class="tab-content row justify-content-center" style="overflow-x: auto; min-width: 100%;">
-  <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+        <style>
+          .schedule-tab-content {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+          }
+
+          @media (max-width: 1200px) {
+            .schedule-tab-content {
+              padding: 0 12px;
+            }
+          }
+        </style>
+<div class="tab-content row justify-content-center schedule-tab-content" style="overflow-x: auto; min-width: 100%;">
+  <div role="tabpanel" class="col-12 tab-pane fade show active" id="day-1">
     <div class="row schedule-header" style="display: flex; font-weight: bold; background-color: #f6f7fd; padding: 10px 0; border-bottom: 2px solid #f82249; margin: 0;">
       <div style="width: 16.66%; text-transform: uppercase; font-size: 16px; color: #0e1b4d;">Time</div>
       <div style="width: 16.66%; text-transform: uppercase; font-size: 16px; color: #0e1b4d;">Presenter</div>
@@ -392,7 +468,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         10:00 AM ET<br>11/20/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/54.png" alt="Marcos Treviso" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -414,7 +490,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         13:00 PM ET<br>11/19/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/53.jpg" alt="Rui-Jie Zhu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -437,11 +513,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>11/07/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
           
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;"> 
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;"> 
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/51.jpg" alt="Yuxi Liu" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -451,7 +527,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/52.webp" alt="Konpat Preechakul" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -476,7 +552,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         13:00 PM ET<br>10/23/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/50.png" alt="Arshia Afzal" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -499,7 +575,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>10/22/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/49.jpg" alt="Zhuoqing Song" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -522,7 +598,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         16:00 PM ET<br>10/16/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/48.jpg" alt="Kwangjun Ahn" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -544,7 +620,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>10/14/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/47.jpg" alt="Lifan Yuan" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -567,11 +643,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         16:30 PM ET<br>10/10/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
           
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;"> 
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;"> 
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/45.png" alt="Konwoo Kim" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -581,7 +657,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/46.png" alt="Suhas Kotha" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -606,7 +682,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         11:00 AM ET<br>10/8/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/44.jpg" alt="Fengzhuo Zhang" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -629,11 +705,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>9/30/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
           
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;"> 
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;"> 
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/43.png" alt="Xavier Gonzalez" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -643,7 +719,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/44.png" alt="Leo Kozachkov" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -670,7 +746,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>9/16/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/42.png" alt="Sabri Eyuboglu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -693,7 +769,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         18:00 PM ET<br>9/10/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/41.jpeg" alt="Kaiyue Wen" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -716,7 +792,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         11:00 AM ET<br>9/5/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/40.jpg" alt="Jinjie Ni" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -739,7 +815,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         10:00 PM ET<br>8/27/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/39.jpg" alt="Jinjie Ni" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -764,7 +840,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>8/26/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/38.png" alt="Mihir Prabhudesai" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -788,7 +864,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         4:00 PM ET<br>8/21/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/37.jpg" alt="Hongyin Luo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -813,7 +889,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>8/13/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/36.jpg" alt="Korbinian Pöppel" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -837,7 +913,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         5:15 PM ET<br>8/5/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/35.png" alt="Jason Ansel" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -861,7 +937,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>8/4/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/34.png" alt="Assaf Ben-Kish" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -885,7 +961,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>7/29/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/33.jpg" alt="Jacob Buckman" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -909,7 +985,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>7/24/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/32.jpg" alt="Aurko Roy" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -931,7 +1007,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>7/22/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/31.png" alt="Aviv Bick" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -955,7 +1031,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>7/1/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/30.jpg" alt="Zirui Liu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -978,7 +1054,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         12:00 PM ET<br>6/27/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/29.jpg" alt="Mingyu Xu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1001,7 +1077,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         12:00 PM ET<br>6/26/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/28.jpg" alt="Piotr Nawrot" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1024,11 +1100,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>6/24/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
       
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/26.png" alt="Johannes von Oswald" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1038,7 +1114,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/27.png" alt="Nino Scherrer" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1064,7 +1140,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         10:00 PM ET<br>6/18/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/25.jpg" alt="Runze Liu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1086,7 +1162,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>6/18/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img src="assets/img/organizers/XY.jpeg" alt="Xinyu Yang" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
         </div>
@@ -1109,7 +1185,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>6/9/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/24.jpg" alt="Yong-Jin Liu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1132,7 +1208,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>6/5/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/23.jpeg" alt="Yong-Jin Liu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1156,7 +1232,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         22:00 PM ET<br>6/3/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/22.jpg" alt="Jianyu Zhang" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1179,7 +1255,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>5/28/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/21.jpeg" alt="Chenxiao Yang" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1202,7 +1278,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         15:00 PM ET<br>5/22/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/19.jpg" alt="Xiangming Gu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1225,7 +1301,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         16:00 PM ET<br>5/21/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/20.jpg" alt="Shizhe Diao" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1248,7 +1324,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         14:00 PM ET<br>5/6/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/18.jpg" alt="Siyan Zhao" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1271,7 +1347,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         10:30 AM ET<br>4/23/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/17.jpeg" alt="Yihan Geng" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1294,7 +1370,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         02:00 PM ET<br>4/22/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/16.jpg" alt="Lin Zheng" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1317,7 +1393,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         11:00 AM ET<br>4/17/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/15.jpg" alt="Guanghan Wang" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1340,7 +1416,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         02:00 PM ET<br>4/17/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/14.jpeg" alt="Ali Behrouz" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1363,7 +1439,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         02:00 PM ET<br>4/10/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/13.jpeg" alt="Babak Rahmani" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1386,7 +1462,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         02:00 PM ET<br>4/9/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/12.jpg" alt="Xin Dong" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1409,7 +1485,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         10:00 PM ET<br>3/27/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/11.png" alt="Jiezhong Qiu" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1432,7 +1508,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         2:00 PM ET<br>3/20/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/10.jpg" alt="Zhixuan Lin" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1455,7 +1531,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         1:00 PM ET<br>3/18/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/9.jpg" alt="Jonas Geiping" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1478,7 +1554,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         1:30 PM ET<br>3/12/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/8.jpeg" alt="Luca Zancato" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
@@ -1501,11 +1577,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         1:30 PM ET<br>3/5/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
       
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/4.jpeg" alt="Riccardo Grazzi" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1515,7 +1591,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/5.png" alt="Julien Siems" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1542,11 +1618,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         1:30 PM ET<br>3/3/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
       
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/3.jpeg" alt="Shawn Tan" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1556,7 +1632,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/7.jpeg" alt="Yikang Shen" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1583,11 +1659,11 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         4:00 PM ET<br>2/24/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; min-height: 50px; height: 100%;">
+        <div class="multi-presenters" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
           
           <!-- Speaker 1 -->
-          <div style="display: flex; align-items: center; gap: 5px;"> 
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;"> 
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/2.jpg" alt="Yang Zhou" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1597,7 +1673,7 @@
           </div>
       
           <!-- Speaker 2 -->
-          <div style="display: flex; align-items: center; gap: 5px;">
+          <div class="presenter-row" style="display: flex; align-items: center; gap: 5px;">
             <div class="speaker" style="display: flex; align-items: center; height: 100%;">
               <img data-src="assets/img/speakers/6.jpeg" alt="Beidi Chen" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="lazy">
             </div>
@@ -1623,7 +1699,7 @@
       <div style="width: 16.66%; display: flex; align-items: center; text-align: center; justify-content: center;">
         1:30 PM ET<br>2/19/2025
       </div>
-      <div style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
+      <div class="presenter-row" style="width: 16.66%; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; height: 100%;">
         <div class="speaker" style="display: flex; align-items: center; height: 100%;">
           <img data-src="assets/img/speakers/1.jpeg" alt="Alex Wang" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" class="lazy">
         </div>
