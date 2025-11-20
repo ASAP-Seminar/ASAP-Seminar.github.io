@@ -525,19 +525,76 @@
               align-items: flex-start !important;
             }
             
-            /* 确保 presenter 列完全左对齐，无额外 padding */
+            /* Presenter 列：水平和垂直都居中 */
             #day-1 .schedule-item > div:nth-child(2) {
               padding: 0 !important;
+              align-items: center !important;
+              align-self: center !important;
+              justify-content: center !important;
+              display: flex !important;
+              height: 100% !important;
+            }
+            
+            /* Presenter 列内部内容也居中 */
+            #day-1 .schedule-item > div:nth-child(2) .presenter-row,
+            #day-1 .schedule-item > div:nth-child(2) .multi-presenters {
+              justify-content: center !important;
+              justify-items: center !important;
+            }
+            
+            #day-1 .schedule-item > div:nth-child(2) span {
+              text-align: center !important;
             }
 
+            /* TOPIC 列：水平和垂直都居中 */
             #day-1 .schedule-item > div:nth-child(3) {
-              text-align: left !important;
-              justify-content: flex-start !important;
+              text-align: center !important;
+              justify-content: center !important;
+              align-items: center !important;
+              align-self: center !important;
+              display: flex !important;
+              height: 100% !important;
+            }
+            
+            #day-1 .schedule-item > div:nth-child(3) span {
+              text-align: center !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              width: 100% !important;
             }
 
             #day-1 .schedule-item .presenter-row {
               gap: 0 !important;
               padding: 0 !important;
+              align-items: center !important;
+            }
+            
+            /* Presenter 列内部的内容也垂直居中 */
+            #day-1 .schedule-item > div:nth-child(2) .presenter-row,
+            #day-1 .schedule-item > div:nth-child(2) .multi-presenters {
+              align-items: center !important;
+              justify-content: center !important;
+              justify-items: center !important;
+            }
+            
+            /* 多讲者：确保 Grid 布局和居中 */
+            #day-1 .schedule-item > div:nth-child(2) .multi-presenters {
+              display: grid !important;
+              grid-template-columns: 1fr !important;
+              justify-items: center !important;
+            }
+            
+            /* 多讲者内部的 span 也居中 */
+            #day-1 .schedule-item > div:nth-child(2) .multi-presenters span {
+              grid-column: 1 !important;
+              text-align: center !important;
+              justify-self: center !important;
+            }
+            
+            /* 表头 Presenter 列在最窄屏时也居中 */
+            #day-1 .schedule-header > div:nth-child(2) {
+              text-align: center !important;
             }
           }
           
@@ -555,17 +612,36 @@
               display: none !important;
             }
             
-            /* 统一 presenter 列的左右边距与对齐 */
+            /* Presenter 列：水平居中 */
             .schedule-item > div:nth-child(2),
             .schedule-item > .presenter-row:nth-child(2),
             .schedule-item > div.presenter-row {
               padding: 0 !important;
               margin: 0 !important;
-              justify-content: flex-start !important;
-              align-items: flex-start !important;
+              justify-content: center !important;
+              align-items: center !important;
             }
 
-            /* 覆盖全局的 padding-left: 20px，确保外层容器左对齐 */
+            /* 表头 Presenter 列也居中 */
+            .schedule-header > div:nth-child(2) {
+              text-align: center !important;
+              padding: 0 !important;
+            }
+            
+            /* 确保表头其他列也有相同的 padding */
+            .schedule-header > div {
+              padding: 0 !important;
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+            }
+            
+            .schedule-item > div:nth-child(2) {
+              padding: 0 !important;
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+            }
+            
+            /* 覆盖全局的 padding-left: 20px，确保外层容器居中 */
             .schedule-item > div.presenter-row:has(.multi-presenters),
             .schedule-item > div.presenter-row,
             .schedule-item > div:nth-child(2).presenter-row {
@@ -573,33 +649,35 @@
               padding-left: 0 !important;
               padding-right: 0 !important;
               margin: 0 !important;
-              justify-content: flex-start !important;
-              align-items: flex-start !important;
+              justify-content: center !important;
+              align-items: center !important;
             }
 
-            /* 所有 presenter-row：先统一改成单列 Grid */
+            /* 所有 presenter-row：先统一改成单列 Grid，内容居中 */
             .schedule-item .presenter-row {
               grid-template-columns: 1fr !important;
               column-gap: 0 !important;
-              justify-items: flex-start !important;
+              justify-items: center !important;
             }
             
-            /* 单讲者的 span 直接左对齐 */
+            /* 单讲者的 span 居中 */
             .schedule-item .presenter-row:not(:has(.multi-presenters)) span {
               grid-column: 1 !important;
-              text-align: left !important;
+              text-align: center !important;
               padding: 0 !important;
               margin: 0 !important;
             }
 
-            /* 多讲者：改成单列 Grid */
+            /* 多讲者：改成单列 Grid，内容居中 */
             .schedule-item > div > .multi-presenters,
             .schedule-item .presenter-row > .multi-presenters,
             .schedule-item .multi-presenters {
+              display: grid !important;
               grid-template-columns: 1fr !important;
               column-gap: 0 !important;
               row-gap: 8px !important;
-              justify-items: flex-start !important;
+              justify-items: center !important;
+              align-items: center !important;
               padding: 0 !important;
               margin: 0 !important;
             }
@@ -609,13 +687,20 @@
               display: contents !important;
             }
             
-            /* 多讲者内部的 span 也左对齐 */
+            /* 多讲者内部的 span 也居中 */
             .schedule-item .multi-presenters span {
               grid-column: 1 !important;
-              text-align: left !important;
-              justify-self: flex-start !important;
+              text-align: center !important;
+              justify-self: center !important;
+              justify-content: center !important;
               padding: 0 !important;
               margin: 0 !important;
+            }
+            
+            /* 如果 span 内部有 flex 布局，也要居中 */
+            .schedule-item .multi-presenters span[style*="flex"] {
+              justify-content: center !important;
+              text-align: center !important;
             }
           }
           
