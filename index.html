@@ -694,12 +694,14 @@
               justify-self: center !important;
               justify-content: center !important;
               padding: 0 !important;
-              margin: 0 !important;
+              margin: 0 auto !important;
+              display: flex !important;
+              align-items: center !important;
+              width: auto !important;
             }
             
-            /* 如果 span 内部有 flex 布局，也要居中 */
-            .schedule-item .multi-presenters span[style*="flex"] {
-              justify-content: center !important;
+            /* span 内部的链接也居中 */
+            .schedule-item .multi-presenters span a {
               text-align: center !important;
             }
           }
